@@ -17,38 +17,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gho-QP-wzK">
-                                <rect key="frame" x="20" y="74" width="97" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="guK-if-mn2">
+                                <rect key="frame" x="20" y="45" width="300" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBF-yY-pFz">
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gho-QP-wzK">
+                                        <rect key="frame" x="0.0" y="21" width="300" height="33"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="p9X-MD-OtQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1k-Nm-IBN">
+                                        <rect key="frame" x="0.0" y="53" width="118" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Set Default Value"/>
+                                        <connections>
+                                            <action selector="setDefaultMealName:" destination="BYZ-38-t0r" eventType="touchDown" id="tqB-Al-gWK"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="mingren-1" translatesAutoresizingMaskIntoConstraints="NO" id="U6d-dA-NCo">
+                                        <rect key="frame" x="0.0" y="83" width="240" height="117"/>
+                                        <animations/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Fco-Ms-2gD"/>
+                                            <constraint firstAttribute="height" constant="117" id="fev-g8-Pam"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="KsI-6k-tIW" appends="YES" id="wF7-xu-Utg"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1k-Nm-IBN">
-                                <rect key="frame" x="20" y="112" width="118" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Set Default Value"/>
-                                <connections>
-                                    <action selector="setDefaultMealName:" destination="BYZ-38-t0r" eventType="touchDown" id="tqB-Al-gWK"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBF-yY-pFz">
-                                <rect key="frame" x="20" y="45" width="87" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="0Ie-SV-0CB"/>
+                                    <constraint firstAttribute="height" constant="200" id="WhR-l1-0zw"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="guK-if-mn2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="lqw-fF-mtB"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mealNameInputText" destination="gho-QP-wzK" id="34W-g0-aDL"/>
                         <outlet property="mealNameLabel" destination="bBF-yY-pFz" id="UoC-El-J5Z"/>
+                        <outlet property="photoImageView" destination="U6d-dA-NCo" id="XDN-il-IFE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KsI-6k-tIW">
+                    <connections>
+                        <action selector="selectImageFromImageList:" destination="BYZ-38-t0r" id="M6K-EK-6tU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="mingren-1" width="100" height="100"/>
+    </resources>
 </document>
